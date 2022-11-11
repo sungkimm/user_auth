@@ -1,0 +1,35 @@
+# Algorithms
+algo: 'RS256' 
+
+algo_types:
+  # --------------- Sysmmetric --------------
+  HS256 : "symm"
+  HS384 : "symm"
+  HS512 : "symm"
+  # --------------- Asysmmetric --------------
+  ES256 : "asymm"  # not working
+  ES256K: "asymm"  # not working
+  ES384 : "asymm"  # not working
+  ES512 : "asymm"  # not working
+  RS256 : "asymm"
+  RS384 : "asymm"
+  RS512 : "asymm"
+  PS256 : "asymm"
+  PS384 : "asymm"
+  PS512 : "asymm"
+  EdDSA : "asymm"  # not working
+
+
+# symmetric key
+# openssl rand -hex 32
+secret_key: JWT_TOKEN_KEY  # env var
+
+# asymmetric key
+private_key_path: /path/to/privatekey
+public_key_path: /path/to/pubkey.pub
+
+
+token_issuer: access_issue
+token_exp_claim : 1  # in hour
+
+

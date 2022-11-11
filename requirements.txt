@@ -1,0 +1,10 @@
+pyjwt
+cryptography
+PyYAML
+fastapi
+uvicorn
+python-multipart
+
+
+
+passlib

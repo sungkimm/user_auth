@@ -1,0 +1,5 @@
+app/__pycache__
+app/routers/__pycache__
+app/*.txt
+app/config/access_token_cfg.yml
+app/config/refresh_token_cfg.yml
