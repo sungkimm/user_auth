@@ -1,5 +1,6 @@
+import config
 from fastapi import Depends, FastAPI
-from routers import authentication, token
+from routers import authentication, token, social_oauth
 
 
 
@@ -9,6 +10,7 @@ app = FastAPI()
 
 app.include_router(authentication.router)
 app.include_router(token.router)
+app.include_router(social_oauth.router)
 
 
 @app.get("/")

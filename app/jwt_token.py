@@ -17,7 +17,7 @@ class JWTTokenEncrypter():
             self.config = yaml.load(f, Loader=yaml.FullLoader)
             self.encryption_type = self.config['algo_types'][self.config['algo']]
 
-    def create_payload(self):
+    def set_default_payload(self):
 
         # TODO: Timezone
         # TODO: issuer
@@ -31,6 +31,14 @@ class JWTTokenEncrypter():
                     }
         
         return payload
+    
+
+    def create_payload(self, payload:dict = {}):
+
+        default_payload = self.set_default_payload()
+
+        return {**default_payload, **payload}
+
     
     def _get_token_secret_keys(self):
 

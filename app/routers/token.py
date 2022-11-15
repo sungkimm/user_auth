@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends
-
+from typing import Optional
 from layer import refresh_access_token, issue_new_access_token, create_new_tokens
 from dependencies import validate_access_token, validate_refresh_token
 
@@ -11,8 +11,13 @@ router = APIRouter(
 
 
 @router.post('/create_tokens')
-def create_tokens_testcase():
-    access, refresh = create_new_tokens()
+def create_tokens_testcase(email : Optional[str] = None):
+
+    payload = dict()
+    if email:
+        payload["email"] = email
+
+    access, refresh = create_new_tokens(payload)
 
     return {"access_token" : access, 
             "refresh_token" : refresh }
@@ -46,14 +51,3 @@ def refresh_tokens(access_token : str = Depends(validate_access_token),
 
 
     return rst
-
-
-
-
-
-
-@router.get('/login')
-def login():
-
-    print('logiiinnng')
-    return {'y':'y'}

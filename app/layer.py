@@ -60,9 +60,9 @@ def callback_url():
 
 
 
-def create_new_tokens():
+def create_new_tokens(access_extra_payload : dict = {}):
 
-    payload = access_token_encrypter.create_payload()
+    payload = access_token_encrypter.create_payload(access_extra_payload)
     access_token = access_token_encrypter.encode_token(payload)
 
     payload = refresh_token_encrypter.create_payload()

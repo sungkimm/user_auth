@@ -1,0 +1,10 @@
+kakao:
+  auth_code_url: "https://kauth.kakao.com/oauth/token"
+  grant_type: "authorization_code"
+  redirect_url: "callback_url"
+  client_secret : "secret"
+
+
+  get_user_info_url: "https://kapi.kakao.com/v2/user/me"
+  refresh_tokens: "https://kauth.kakao.com/oauth/token"
+  unlink_url: "https://kapi.kakao.com//v1/user/unlink"
